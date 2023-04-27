@@ -1,0 +1,108 @@
+/*
+CITE: Developing Accessible User Interfaces
+TITLE: Assignment 1: HTML, CSS, and JavaScript Basics
+AUTHOR: Modified from Microsoft’s module on learning web development
+DATE: January 26, 2023
+AVAILABILITY: Barnard College CourseWorks
+*/
+
+:root {
+    --pink: #fd8e94;
+    --white: #ffffff;
+    --black: #000000;
+    --fontColor: #000000;
+    --bg: #ffffff;
+    max-width: 500px;
+    margin: auto;
+}
+
+* {
+    color: var(--fontColor);
+    font-family: helvetica;
+}
+body {
+    background: var(--bg);
+}
+
+ul {
+    font-family: helvetica;
+}
+
+img {
+    width: 200px;
+}
+
+li {
+    list-style: circle;
+}
+
+.list {
+    list-style: square;
+}
+
+
+
+
+
+* {box-sizing: border-box;}
+
+.img-magnifier-container {
+    position: relative;
+}
+
+.column {
+    position: relative;
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.img-magnifier-glass {
+    position: absolute;
+    border: 3px solid #000;
+    border-radius: 50%;
+    cursor: none;
+    /*Set the size of the magnifier glass:*/
+    width: 100px;
+    height: 100px;
+}
+
+
+.img-zoom-container {
+    position: relative;
+}
+
+.img-zoom-lens {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    /*set the size of the lens:*/
+    width: 40px;
+    height: 40px;
+}
+
+.img-zoom-result {
+    border: 1px solid #d4d4d4;
+    /*set the size of the result div:*/
+    width: 300px;
+    height: 300px;
+}
+
+.highlight {
+    outline: 3px solid red;
+}
+
+/*
+Code Sources:
+https://www.w3schools.com/howto/howto_css_images_side_by_side.asp
+https://www.w3schools.com/howto/howto_js_image_zoom.asp
+https://www.w3schools.com/howto/howto_js_image_magnifier_glass.asp
+https://stackoverflow.com/questions/10270075/image-height-and-width-not-working
+https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/rate
+ */

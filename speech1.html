@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Speech to Typing Test</title>
+    <link rel="stylesheet" href="speech1.css">
+</head>
+<body>
+</p>
+<h2>Speech to Typing Test</h2>
+<p>
+    HOW TO PLAY: One aspect of accessible technology is the use of personalization.
+</p>
+<p>
+    Usually screen readers or text-to-speech are difficult to use and understand.
+    We have seen many examples of really fast/loud/pitchy or slow/quiet/deep speakers
+    as well.
+    How can personal customization alongside the use of accessible design be useful?
+</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h3>Click Here To Hear The Speech </h3>
+<button id="speak">Speak</button>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h3> Enter the text in the box below!</h3>
+<textarea rows = "5" cols = "60" name = "description" id="speech-msg">
+</textarea>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<form id=”contact” onsubmit="return postToGoogle();">
+<h3> Submit your response here: <button type="submit" id="submit">Submit</button> </h3>
+<label id="output"> Accuracy Score: </label><input type="textbox" name="output"></input>
+</form>
+
+<script>
+    function postToGoogle() {
+        var field1 = document.getElementsByName('output')[0].value;
+
+        $.ajax({
+            url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLScm66lgUXWflSYfdLUfDejLAMCsSKLNtIZHXam7Jyyvgm54VQ/formResponse",
+
+            //add your google form generated numbers below which are also the 'names' of your inputs
+            data: {
+                "entry.875113416": field1,
+            },
+            type: "POST",
+            dataType: "xml",
+            success: function (d) {
+                $('#contact').trigger('reset');
+            },
+            error: function (x, y, z) {
+                $('#contact').trigger('reset');
+            }
+        });
+        return false;
+    }
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="speech1.js"></script>
+<noscript>You need to enable JavaScript to view the full site</noscript>
+</body>
+</html>

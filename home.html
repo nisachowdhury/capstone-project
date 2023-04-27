@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Capstone Project</title>
+  <link rel="stylesheet" href="main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  <script>
+    document.getElementById("mySidebar").style.color = "#eddaf6";
+  </script>
+  <style>
+    body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+    body {font-size:16px;}
+    .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+    .w3-half img:hover{opacity:1}
+  </style>
+</head>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold; background-color: #eddaf6!important" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Capstone<br>Project</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+    <a href="#Description" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Description</a>
+    <a href="#Overview" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Overview</a>
+    <a href="#Zoom" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Zoom</a>
+    <a href="#Games1" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Magnifer Games</a>
+    <a href="#Speech" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Speech</a>
+    <a href="#Games2" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Speech Games</a>
+    <a href="#analysis" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Analysis</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Company Name</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="Description">
+    <h1 class="w3-jumbo"><b>Welcome to Accessibility Learning, Testing, & Awareness</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>Description</b></h1>
+    <hr style="width:50px;border:5px solid #7e86f3" class="w3-round">
+  </div>
+
+  <!-- Intro -->
+  <div class="w3-row-padding">
+        Screen readers and screen magnifiers are the two biggest accessibility tools as incorporated and found in the majority of OS and Windows
+        devices.
+        Not only this, but in recent technology there are new ways to incorporate AI to make
+        screen reading less cumbersome.
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- Overview-->
+  <div class="w3-container" id="Overview" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Overview</b></h1>
+    <hr style="width:50px;border:5px solid #7e86f3" class="w3-round">
+    This site is designed to bring awareness to the importance of the main accessibility features relevant to today.
+    The site involves two case studies that involves the user to compare side by side the usability of accessibility tools versus not having them and a different range and forms to decide which are most efficient.
+  </div>
+
+  <!-- Zoom -->
+  <div class="w3-container" id="Zoom" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Zoom</b></h1>
+    <hr style="width:50px;border:5px solid #7e86f3" class="w3-round">
+    <p>Let's Look At Different Ways To Magnify</p>
+
+    <div class="column">
+      <ul>
+        <li>Magnifying Glass</li>
+      </ul>
+      <div class="img-magnifier-container">
+        <img id="img" src="https://library.duke.edu/rubenstein/scriptorium/sheetmusic/1mm-text-ex2.jpeg" width="600" height="400" alt="Test">
+      </div>
+    </div>
+    <div class="column">
+      <ul>
+        <li>Magnifier Zoom</li>
+      </ul>
+      <div class="img-zoom-container">
+        <img id="myimg" src="https://library.duke.edu/rubenstein/scriptorium/sheetmusic/1mm-text-ex2.jpeg" width="300" height="240" alt="Girl">
+        <div id="myresult" class="img-zoom-result"></div>
+      </div>
+    </div>
+
+
+  <!-- Games Round 1 -->
+  <div class="w3-container" id="Games1" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Magnifier Games</b></h1>
+    <hr style="width:50px;border:5px solid #7e86f3" class="w3-round">
+    <p>Grab a friend or play on your own. Try to find all the objects using magnifier on the left.
+      Then after your done solve the right, or compete against your partner on who can solve it first.</p>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-half w3-margin-bottom">
+      <ul class="w3-ul w3-light-grey w3-center">
+        <li class="w3-dark-grey w3-xlarge w3-padding-32"><a href = player1.html > Player 1 Game</a></li>
+    </div>
+
+    <div class="w3-half">
+      <ul class="w3-ul w3-light-grey w3-center">
+        <li class="w3-xlarge w3-padding-32"><a href = player2.html > Player 2 Game</a></li>
+    </div>
+  </div>
+
+  <!-- Speech -->
+  <div class="w3-container" id="Speech" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Speech</b></h1>
+    <hr style="width:50px;border:5px #7e86f3d" class="w3-round">
+    <h1>Let's Look At Different Ways To Speech</h1>
+
+    <p id="msg">Use the text box below to input text to be spoken aloud</p>
+
+    <input type="text" name="speech-msg" id="speech-msg" x-webkit-speech>
+
+    <div class="option">
+      <label for="voice">Voice</label>
+      <select name="voice" id="voice"></select>
+    </div>
+    <div class="option">
+      <label for="volume">Volume</label>
+      <input type="range" min="0" max="1" step="0.1" name="volume" id="volume" value="1">
+    </div>
+    <div class="option">
+      <label for="rate">Rate</label>
+      <input type="range" min="0.1" max="10" step="0.1" name="rate" id="rate" value="1">
+    </div>
+    <div class="option">
+      <label for="pitch">Pitch</label>
+      <input type="range" min="0" max="2" step="0.1" name="pitch" id="pitch" value="1">
+    </div>
+
+    <button id="speak">Speak</button>
+
+
+  </div>
+
+  <!-- Games Round 2 -->
+  <div class="w3-container" id="Games2" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Speech Games</b></h1>
+    <hr style="width:50px;border:5px solid #7e86f3" class="w3-round">
+    <p>Now That We Have Explored Zooms: Let's Play A Game!
+      Grab a friend or play on your own.
+      Try attempting the typing test using the default versus the personalized text to speech option.
+    </p>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-half w3-margin-bottom">
+      <ul class="w3-ul w3-light-grey w3-center">
+        <li class="w3-dark-grey w3-xlarge w3-padding-32"><a href = speech1.html > Defaulted Game</a></li>
+    </div>
+
+    <div class="w3-half">
+      <ul class="w3-ul w3-light-grey w3-center">
+        <li class="w3-xlarge w3-padding-32"><a href = speech2.html > Customized Game</a></li>
+    </div>
+  </div>
+
+
+
+    <!-- Analysis -->
+    <div class="w3-container" id="analysis" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-red"><b>Analysis</b></h1>
+      <hr style="width:50px;border:5px solid #7e86f3" class="w3-round">
+      <p>
+        The best way to test the efficiency and usability of accessible tools is through data collection and research.
+        Little did you know, throughout the activities done so far you have been helping us gain insight on the tools looked at so far!
+      </p>
+    </div>
+
+    <div class="w3-row-padding">
+      <div class="w3-half w3-margin-bottom">
+        <ul class="w3-ul w3-light-grey w3-center">
+          <li class="w3-dark-grey w3-xlarge w3-padding-32"><a href = analysis.html > Data Analysis</a></li>
+      </div>
+      <div class="w3-half">
+        <ul class="w3-ul w3-light-grey w3-center">
+          <li class="w3-xlarge w3-padding-32"><a href = data.html >Feedback</a></li>
+      </div>
+    </div>
+
+  <!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div>
+
+<script>
+  // Script to open and close sidebar
+  function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+  }
+
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+  }
+
+  // Modal Image Gallery
+  function onClick(element) {
+    document.getElementById("img01").src = element.src;
+    document.getElementById("modal01").style.display = "block";
+    var captionText = document.getElementById("caption");
+    captionText.innerHTML = element.alt;
+  }
+</script>
+<script src="app.js"></script>
+</body>
+</html>

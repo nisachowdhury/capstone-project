@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data</title>
+    <link rel="stylesheet" href="data.css">
+</head>
+<body>
+<h1>User Feedback</h1>
+<p>User accessibility is all about the user.
+    We need your help to understand user needs, painpoints, opinions, and comments!</p>
+<br>
+<p>
+  <label for="range1">How did you feel about Using Image Magnification?</label>
+  <br>
+  <input type="range" id="range1" name="temp1" list="values"/>
+</p>
+
+
+<datalist id="values">
+  <option value="0" label="1"></option>
+  <option value="25" label="2"></option>
+  <option value="50" label="3"></option>
+  <option value="75" label="4"></option>
+  <option value="100" label="5"></option>
+</datalist>
+
+<br>
+<br>
+
+<p>
+    <label for="range2">How did you feel about Using Image Zoom Box?</label>
+    <br>
+    <input type="range" id="range2" name="temp2" list="values2"/>
+</p>
+
+
+<datalist id="values2">
+    <option value="0" label="1"></option>
+    <option value="25" label="2"></option>
+    <option value="50" label="3"></option>
+    <option value="75" label="4"></option>
+    <option value="100" label="5"></option>
+</datalist>
+
+
+<br>
+<br>
+
+<legend>How Did You Feel About the Default Speech Game?</legend>
+
+<div>
+    <input type="radio" id="like" name="feel1" value="like">
+    <label for="like">Like</label>
+</div>
+
+<div>
+    <input type="radio" id="meh" name="feel1" value="meh" checked>
+    <label for="meh">Meh</label>
+</div>
+
+<div>
+    <input type="radio" id="dislike" name="feel1" value="dislike">
+    <label for="dislike">Dislike</label>
+</div>
+
+<br>
+<br>
+
+<legend>How Did You Feel About the Custom Speech Game?</legend>
+
+<div>
+    <input type="radio" id="good" name="feel" value="good">
+    <label for="good">Good</label>
+</div>
+
+<div>
+    <input type="radio" id="neutral" name="feel" value="neutral" checked>
+    <label for="neutral">Neutral</label>
+</div>
+
+<div>
+    <input type="radio" id="bad" name="feel" value="bad">
+    <label for="bad">Bad</label>
+</div>
+<p><label for="comment">Any other feedback or comments?</label></p>
+<textarea id="comment" name="comment" rows="4" cols="50">Ex: This is the best site ever!</textarea>
+<br>
+
+
+
+    <form id=”contact” onsubmit="return postToGoogle();">
+        <button type="submit" id="submit">Submit</button>
+    </form>
+
+
+
+
+
+<script>
+    function postToGoogle() {
+        var field5 = document.getElementsByName('comment')[0].value;
+        console.log(field5);
+        var x = document.getElementById("range1").value;
+        var field1 = (x / 100) * 5;
+        var y = document.getElementById("range2").value;
+        var field2 = (y / 100) * 5;
+        console.log(field1);
+        console.log(field2);
+        if(document.getElementById('good').checked) {
+            var field3 = "good";
+        }
+        if(document.getElementById('bad').checked) {
+            var field3 = "bad";
+        }
+        if(document.getElementById('neutral').checked) {
+            var field3 = "neutral";
+        }
+        console.log(field3);
+        if(document.getElementById('like').checked) {
+            var field4 = "like";
+        }
+        if(document.getElementById('dislike').checked) {
+            var field4 = "dislike";
+        }
+        else{
+            var field4 = "meh";
+        }
+        console.log(field4);
+
+
+
+
+
+        $.ajax({
+            url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSepIpScMaEHQq2fPP9nx5p1xSe3QnYZNUwHLqvyM7MEL0zNeg/formResponse",
+
+            //add your google form generated numbers below which are also the 'names' of your inputs
+            data: {
+                "entry.753953025": field1,
+                "entry.207930480": field2,
+                "entry.2048050777": field3,
+                "entry.1099845985": field4,
+                "entry.358893363": field5,
+            },
+            type: "POST",
+            dataType: "xml",
+            success: function (d) {
+                $('#contact').trigger('reset');
+            },
+            error: function (x, y, z) {
+                $('#contact').trigger('reset');
+            }
+        });
+        return false;
+
+
+    }
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+<script src="data.js"></script>
+<noscript>You need to enable JavaScript to view the full site.</noscript>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Default Mode</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body class="light-theme">
+<h1>Welcome to Accessibility Learning & Testing</h1>
+<h2>Description</h2>
+<p>
+    Screen readers and screen magnifiers are the two biggest accessibility tools as incorporated and found in the majority of OS and Windows
+    devices.
+    Not only this, but in recent technology there are new ways to incorporate AI to make
+    screen reading less cumbersome.
+</p>
+<h2>Overview</h2>
+<p>
+    This site is designed to bring awareness to the importance of the main accessibility features relevant to today.
+    The site involves two case studies that involves the user to compare side by side the usability of accessibility tools versus not having them and a different range and forms to decide which are most efficient.
+</p>
+<br>
+<br>
+    <h2>Let's Look At Different Ways To Magnify</h2>
+
+
+    <ul>
+        <li>Magnifying Glass</li>
+    </ul>
+<div class="img-magnifier-container">
+    <img id="img" src="https://library.duke.edu/rubenstein/scriptorium/sheetmusic/1mm-text-ex2.jpeg" width="600" height="400" alt="Test">
+</div>
+
+
+    <ul>
+        <li>Magnifier Zoom</li>
+    </ul>
+<div class="img-zoom-container">
+    <img id="myimg" src="https://library.duke.edu/rubenstein/scriptorium/sheetmusic/1mm-text-ex2.jpeg" width="300" height="240" alt="Girl">
+    <div id="myresult" class="img-zoom-result"></div>
+</div>
+
+<br>
+<br>
+<h1>Now That We Have Explored Zooms: Let's Play A Game!</h1>
+<h2>Description</h2>
+<p>
+Grab a friend or play on your own. Try to find all the objects using mgnifier on the left.
+Then after your done solve the right, or compete against your partner on who can solve it first.
+</p>
+<a href = player1.html > Link to Player 1 Game</a>
+<br>
+<a href = player2.html > Link to Player 2 Game</a>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<h1>Let's Look At Different Ways To Speech</h1>
+
+<p id="msg">Use the text box below to input text to be spoken aloud</p>
+
+<input type="text" name="speech-msg" id="speech-msg" x-webkit-speech>
+
+<div class="option">
+    <label for="voice">Voice</label>
+    <select name="voice" id="voice"></select>
+</div>
+<div class="option">
+    <label for="volume">Volume</label>
+    <input type="range" min="0" max="1" step="0.1" name="volume" id="volume" value="1">
+</div>
+<div class="option">
+    <label for="rate">Rate</label>
+    <input type="range" min="0.1" max="10" step="0.1" name="rate" id="rate" value="1">
+</div>
+<div class="option">
+    <label for="pitch">Pitch</label>
+    <input type="range" min="0" max="2" step="0.1" name="pitch" id="pitch" value="1">
+</div>
+
+<button id="speak">Speak</button>
+
+<br>
+<br>
+<br>
+<br>
+
+<h1>Now That We Have Explored Zooms: Let's Play A Game!</h1>
+<h2>Description</h2>
+<p>
+    Grab a friend or play on your own.
+    Try attempting the typing test using the default versus the personalized text to speech option.
+</p>
+<a href = speech1.html > Link to Defaulted Game</a>
+<br>
+<a href = speech2.html > Link to Customized Game</a>
+
+
+
+<h1>Analysis</h1>
+<h2>Description</h2>
+<p>
+    The best way to test the efficiency and usability of accessible tools is through data collection and research.
+    Little did you know, throughout the activities done so far you have been helping us gain insight on the tools looked at so far!
+</p>
+<a href = analysis.html > Link to Data</a>
+<br>
+<a href = data.html > Feedback</a>
+
+<script src="app.js"></script>
+<noscript>You need to enable JavaScript to view the full site.</noscript>
+</body>
+</html>
+
+<!-- Code Sources:
+https://www.w3schools.com/howto/howto_css_images_side_by_side.asp
+https://www.w3schools.com/howto/howto_js_image_zoom.asp
+https://www.w3schools.com/howto/howto_js_image_magnifier_glass.asp
+https://stackoverflow.com/questions/10270075/image-height-and-width-not-working
+https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance/rate
+ https://codepen.io/matt-west/pen/DpmMgE
+ https://stackoverflow.com/questions/23049840/how-to-output-javascript-into-a-textbox
+ https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API
+ https://www.w3schools.com/w3css/w3css_templates.asp
+ https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range
+ https://medium.com/geekculture/link-your-html-form-to-a-spreadsheet-via-google-forms-9024f0611d82
+ -->
+
+

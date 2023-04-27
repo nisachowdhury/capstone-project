@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Capstone Project</title>
+  <link rel="stylesheet" href="player2css.css">
+</head>
+<body class="light-theme">
+<h1>Welcome to Accessibility Learning & Testing</h1>
+<h2>Description</h2>
+<h1>Now That We Have Explored Zooms: Let's Play A Game!</h1>
+<h2>HELLO PLAYER 2</h2>
+<p>
+  Your job is to find all the items using the magnifier zoom.
+</p>
+<p>
+  Click start to begin the stopwatch.
+  Use the cursor to click and find the missing emoji.
+  The timer will stop.
+  To record your score hit the submit button.
+</p>
+<div class="wrapper">
+  <h4>Stopwatch</h4>
+  <p><span id="seconds">00</span>:<span id="tens">00</span></p>
+  <button id="button-start">Start</button>
+  <button id="button-reset">Reset</button>
+</div>
+<br>
+<form id=”contact” onsubmit="return postToGoogle();">
+  <label id="output"> </label><input type="textbox" name="output" size="30" ></input>
+  <button type="submit" id="submit">Submit</button>
+</form>
+<br>
+<br>
+<div class="column">
+  <img id="game2" src="https://i.pinimg.com/originals/4d/98/5e/4d985efd64b8c83f708bf290ff158996.jpg" style="width:500px;height:auto;" alt="Girl">
+  <div id="game_result" class="img-zoom-result"></div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<script>
+  function postToGoogle() {
+    var element = document.getElementById('seconds');
+    var field1 = element.innerHTML;
+
+    $.ajax({
+      url: "https://docs.google.com/forms/u/0/d/e/1FAIpQLScm66lgUXWflSYfdLUfDejLAMCsSKLNtIZHXam7Jyyvgm54VQ/formResponse",
+
+      //add your google form generated numbers below which are also the 'names' of your inputs
+      data: {
+        "entry.818758371": field1,
+      },
+      type: "POST",
+      dataType: "xml",
+      success: function (d) {
+        $('#contact').trigger('reset');
+      },
+      error: function (x, y, z) {
+        $('#contact').trigger('reset');
+      }
+    });
+    return false;
+  }
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="player2js.js"></script>
+<noscript>You need to enable JavaScript to view the full site.</noscript>
+</body>
+</html>

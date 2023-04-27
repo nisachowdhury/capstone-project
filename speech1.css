@@ -1,0 +1,9 @@
+:root {
+    --pink: #fd8e94;
+    --white: #ffffff;
+    --black: #000000;
+    --fontColor: #000000;
+    --bg: #ffffff;
+    max-width: 500px;
+    margin: auto;
+}
